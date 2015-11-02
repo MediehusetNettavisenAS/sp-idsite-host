@@ -87,42 +87,42 @@
         <div class="box row">
           <div class="col-sm-12">
             <div class="header">
-              <span>Create an Account</span>
+              <span>Lag en Nettavisen ID-konto</span>
             </div>
             <form class="registration-form form-horizontal sp-form" role="form" ng-controller="RegistrationFormCtrl" ng-submit="submit()">
               <div class="alert alert-danger" ng-show="unknownError">
-                <strong>Sorry, an error occured.  Please reload the page and try again.</strong>
+                <strong>Beklager det oppstod en feil. Vennligst last siden omigjen og prøv på nytt.</strong>
                 <br/>
                 <br/>
                 <p>{{unknownError}}</p>
               </div>
               <div class="form-group group-first-name" form-group>
-                <label class="col-sm-4">First Name</label>
+                <label class="col-sm-4">Fornavn</label>
                 <div class="col-sm-8">
                   <input type="text" class="form-control" name="givenName" form-control name-validation validate-on-blur/>
-                  <small class="help-block" ng-show="validationError">First name is required</small>
+                  <small class="help-block" ng-show="validationError">Fornavn er påkrevd</small>
                 </div>
               </div>
 
               <div class="form-group group-last-name" form-group>
-                <label class="col-sm-4">Last Name</label>
+                <label class="col-sm-4">Etternavn</label>
                 <div class="col-sm-8">
                   <input type="text" class="form-control" name="surname" form-control name-validation validate-on-blur/>
-                  <small class="help-block" ng-show="validationError">Last name is required</small>
+                  <small class="help-block" ng-show="validationError">Etternavn er påkrevd</small>
                 </div>
               </div>
 
               <div class="form-group group-email" form-group>
-                <label class="col-sm-4">Email</label>
+                <label class="col-sm-4">E-postadresse</label>
                 <div class="col-sm-8">
                   <input type="text" class="form-control" name="email" form-control email-validation validate-on-blur/>
-                  <small class="help-block duplicate-user" ng-show="errors.duplicateUser">Email address is already registered</small>
-                  <small class="help-block validation-error" ng-show="validationError">Invalid email address</small>
+                  <small class="help-block duplicate-user" ng-show="errors.duplicateUser">Denne e-postadressen er allerede registrert.</small>
+                  <small class="help-block validation-error" ng-show="validationError">Denne e-postadressen kan ikke brukes.</small>
                 </div>
               </div>
 
               <div class="form-group group-password" form-group>
-                <label class="col-sm-4">Password</label>
+                <label class="col-sm-4">Passord</label>
                 <div class="col-sm-8">
                   <input type="password" class="form-control" name="password" form-control password-policy-validation validate-on-blur/>
                   <div ng-include="'views/password-error-messages.html'"></div>
@@ -130,19 +130,19 @@
               </div>
 
               <div class="form-group group-confirm-password" form-group>
-                <label class="col-sm-4">Confirm Password</label>
+                <label class="col-sm-4">Bekreft passord</label>
                 <div class="col-sm-8">
                   <input type="password" class="form-control" name="passwordConfirm" form-control password-match-validation validate-on-blur/>
-                  <small class="help-block" ng-show="validationError">Password does not match</small>
+                  <small class="help-block" ng-show="validationError">Passordene stemte ikke overens</small>
                 </div>
               </div>
 
-              <button class="btn btn-register btn-sp-green" type="submit">Create Account</button>
+              <button class="btn btn-register btn-sp-green" type="submit">Opprett konto</button>
 
             </form>
           </div>
         </div>
-        <a class="to-login" href="#">Back to Log In</a>
+        <a class="to-login" href="#">Tilbake til logg inn</a>
       </div>
     </script>
     <script type="text/ng-template" id="views/forgot.html">
@@ -150,14 +150,14 @@
         <div class="box row">
           <div class="col-sm-12">
             <div class="header">
-              <span ng-show="!sent && !retry">Password Reset</span>
-              <span ng-show="retry">Reset link has expired</span>
-              <span ng-show="sent">Please check your mail.</span>
+              <span ng-show="!sent && !retry">Tilbakestill passord</span>
+              <span ng-show="retry">Lenken du fulgte har gått ut på dato</span>
+              <span ng-show="sent">Vennligst sjekk din e-post.</span>
 
             </div>
             <div class="wd-sent" ng-show="sent">
               <p>
-                <span>We've sent a password reset link to </span>
+                <span>Vi har nå sendt en tilbakestillingslenke for passord til: </span>
                 <strong>{{fields.email.value}}</strong>.
               </p>
               <p>&nbsp;</p>
@@ -166,25 +166,25 @@
 
 
               <div class="form-group group-email" ng-class="{'has-error':notFound}" form-group>
-                <label class="col-sm-6" ng-hide="retry">Send password reset instructions to:</label>
-                <label class="col-sm-6" ng-show="retry">Send new password reset email to:</label>
+                <label class="col-sm-6" ng-hide="retry">Send instruksjoner for å tilbakestille passord til:</label>
+                <label class="col-sm-6" ng-show="retry">Send e-post med instruksjoner til:</label>
                 <div class="col-sm-6">
                   <input type="text" class="form-control" name="email" form-control email-validation validate-on-blur/>
-                  <small class="help-block wd-invalid-email" ng-show="validationError">Invalid email address</small>
-                  <small class="help-block wd-not-found" ng-show="notFound"><span>Account does not exist.</span></small>
+                  <small class="help-block wd-invalid-email" ng-show="validationError">Dette er ikke en e-postadresse</small>
+                  <small class="help-block wd-not-found" ng-show="notFound"><span>Denne kontoen eksisterer ikke i vårt system.</span></small>
                 </div>
               </div>
               <div class="alert alert-danger" ng-show="unknownError">
-                <strong>Sorry, an error occured.  Please reload the page and try again.</strong>
+                <strong>Beklager dert har oppstått en feil, vennligst last siden på nytt og prøv igjen.</strong>
                 <br/>
                 <br/>
                 <p>{{unknownError}}</p>
               </div>
-              <button class="btn btn-forgot btn-sp-green" type="submit">Reset Password</button>
+              <button class="btn btn-forgot btn-sp-green" type="submit">Tilbakestill passord</button>
             </form>
           </div>
         </div>
-        <a ng-show="!sent" class="to-login" href="#" wd-back-to-login>Back to Log In</a>
+        <a ng-show="!sent" class="to-login" href="#" wd-back-to-login>Tilbake til innlogging</a>
       </div>
     </script>
     <script type="text/ng-template" id="views/reset.html">
@@ -192,32 +192,32 @@
         <div class="box row">
           <div class="col-sm-12">
             <div class="header">
-              <span ng-show="status=='verified'">Password Reset</span>
-              <span ng-show="status=='failed'">Sorry! Something went wrong.</span>
-              <span ng-show="status=='success'">Your have successfully changed your password</span>
+              <span ng-show="status=='verified'">Tilbakestill passord</span>
+              <span ng-show="status=='failed'">Beklager! Noe gikk galt.</span>
+              <span ng-show="status=='success'">Du har nå tilbakestilt passordet ditt.</span>
             </div>
             <div ng-show="status=='failed'">
               <p>
-                <span>You will need to make a new password reset request.</span>
-                <a href="#/forgot">Click here to try again</a>
+                <span>Beklager, du må be om en ny e-post med passord reset.</span>
+                <a href="#/forgot">Trykk her for å prøve igjen.</a>
               </p>
               <p>&nbsp;</p>
             </div>
             <div wd-success ng-show="status==='success'">
               <p>
-                <span>You may now </span>
-                <a href="#/">log in</a>
+                <span>Du kan nå </span>
+                <a href="#/">logge inn</a>
               </p>
               <p>&nbsp;</p>
             </div>
             <div ng-show="error" class="alert alert-danger">
-              <p><strong>The error was:</strong></p>
+              <p><strong>Feilmeldingen var:</strong></p>
               <p>{{error}}</p>
             </div>
 
             <form class="reset-form form-horizontal sp-form" role="form" ng-show="status=='verified'" ng-submit="submit()">
               <div class="form-group group-password" form-group>
-                <label class="col-sm-4">New Password</label>
+                <label class="col-sm-4">Nytt passord</label>
                 <div class="col-sm-8">
                   <input type="password" class="form-control" name="password" form-control password-policy-validation validate-on-blur/>
                   <div ng-include="'views/password-error-messages.html'"></div>
@@ -225,19 +225,19 @@
               </div>
 
               <div class="form-group group-confirm-password" form-group>
-                <label class="col-sm-4">Confirm Password</label>
+                <label class="col-sm-4">Bekreft passord</label>
                 <div class="col-sm-8">
                   <input type="password" class="form-control" name="passwordConfirm" form-control password-match-validation validate-on-blur/>
-                  <small wd-pw-mismatch class="help-block" ng-show="validationError">Password does not match</small>
+                  <small wd-pw-mismatch class="help-block" ng-show="validationError">Passordene du skrev er ikke like</small>
                 </div>
               </div>
               <div class="alert alert-danger" ng-show="unknownError">
-                <strong>Sorry, an error occured.  Please reload the page and try again.</strong>
+                <strong>Beklager en feil oppstod, vennligst prøv igjen.</strong>
                 <br/>
                 <br/>
                 <p>{{unknownError}}</p>
               </div>
-              <button class="btn btn-reset btn-sp-green" type="submit">Submit</button>
+              <button class="btn btn-reset btn-sp-green" type="submit">Send inn</button>
             </form>
           </div>
         </div>
@@ -291,25 +291,25 @@
         <div class="row">
           <div class="col-sm-12">
             <div class="alert alert-warning">
-              <p>Sorry, there is a problem.  The error is:</p>
+              <p>Beklager det oppstod et problem:</p>
               <br/>
               <p class="alert alert-danger" ng-repeat="e in errors">
                 <span>{{e}}</span>
               </p>
               <br/>
-              <p>Please use your browser's back button to return to the previous page, then try again.</p>
+              <p>Vennligst bruke tilbakeknappen i nettleseren din, og prøv igjen.</p>
             </div>
           </div>
         </div>
       </div>
     </script>
     <script type="text/ng-template" id="views/password-error-messages.html">
-      <small class="help-block" ng-show="errors.minLength" wd-minLength>Password is too short</small>
-      <small class="help-block" ng-show="errors.maxLength" wd-maxLength>Password is too long</small>
-      <small class="help-block" ng-show="errors.requireNumeric" wd-requireNumeric>Password requires a number</small>
-      <small class="help-block" ng-show="errors.requireDiacritical" wd-requireDiacritical>Password requires a diacritical character</small>
-      <small class="help-block" ng-show="errors.requireUpperCase" wd-requireUpperCase>Password requires a uppercase letter</small>
-      <small class="help-block" ng-show="errors.requireLowerCase" wd-requireLowerCase>Password requires a lowercase letter</small>
+      <small class="help-block" ng-show="errors.minLength" wd-minLength>Passordet er for kort</small>
+      <small class="help-block" ng-show="errors.maxLength" wd-maxLength>Passordet er for langt</small>
+      <small class="help-block" ng-show="errors.requireNumeric" wd-requireNumeric>Passordet må inneholdet et nummer</small>
+      <small class="help-block" ng-show="errors.requireDiacritical" wd-requireDiacritical>Passord må inneholde et spesialtegn</small>
+      <small class="help-block" ng-show="errors.requireUpperCase" wd-requireUpperCase>Passordet må inneholde minst en stor bokstav</small>
+      <small class="help-block" ng-show="errors.requireLowerCase" wd-requireLowerCase>passordet må inneholde minst en liten bokstav</small>
     </script>
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
