@@ -22,14 +22,14 @@
         <div class="box row">
           <div class="email-password-area  col-xs-12" ng-class="[hasSocial ? 'small col-sm-8' : 'large col-sm-12']">
             <div class="header">
-              <span class="button-na"></span>
+              <span class="button-na top"></span>
               <span>Velkommen til Nettavisen</span>
             </div>
             <p>Nettavisen ønsker en frisk og god debatt i våre kommentarfelt. Du kan registrere deg på to ulike måter: </p>
 
           <div class="social-area  col-xs-12 col-sm-4" ng-show="hasSocial">
             <div class="header">&nbsp;</div>
-            <a href="#register"><span class="button-na"></span> Din personlige Nettavisen-ID</a>
+            <a href="#register" class="btn btn-social button-na">Din personlige Nettavisen-ID</a>
             <button ng-repeat="p in providers" class="btn btn-social btn-{{p.providerId}}" ng-click="providerLogin(p.providerId)">
               Din {{p.providerId}}-profil</button>
           </div>
@@ -41,7 +41,10 @@
             Gunnar Stavrum,<br>
             sjefredaktør</p>
 
-            <h3>Allerede bruker? Logg inn her</h3>
+            <div class="header">
+              <span class="button-na top"></span>
+              <span>Allerede bruker? Logg inn her</span>
+            </div>
             <div class="alert alert-danger bad-login" ng-show="errors.badLogin">
               Feil brukernavn eller passord.
             </div>
