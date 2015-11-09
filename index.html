@@ -22,28 +22,7 @@
         <div class="box row">
           <div class="email-password-area  col-xs-12" ng-class="[hasSocial ? 'small col-sm-8' : 'large col-sm-12']">
             <div class="header">
-              <span class="button-na top"></span>
-              <span>Velkommen til Nettavisen</span>
-            </div>
-            <p>Nettavisen ønsker en frisk og god debatt i våre kommentarfelt. Du kan registrere deg på to ulike måter: </p>
-
-          <div class="social-area  col-xs-12 col-sm-4" ng-show="hasSocial">
-            <div class="header">&nbsp;</div>
-            <a href="#register" class="btn btn-social button-na other">Din personlige Nettavisen-ID</a>
-            <button ng-repeat="p in providers" class="btn btn-social btn-{{p.providerId}}" ng-click="providerLogin(p.providerId)">
-              Din {{p.providerId}}-profil</button>
-          </div>
-
-          <p>Vi vil at flest mulig skriver under fullt navn. Du kan velge mellom din personlige Nettavisen-ID eller din Facebook-profil.</p>
-          <p>Om du vil skrive under pseudonym, må du bruke din personlige Nettavisen-profil. Din identitet vil da være skjult for alle andre enn moderator.</p>
-          <p>Les mer om kommentar-reglene i Nettavisen her.</p>
-          <p style="font-weight: bold;">Med hilsen<br>
-            Gunnar Stavrum,<br>
-            sjefredaktør</p>
-
-            <div class="header">
-              <span class="button-na top"></span>
-              <span>Allerede bruker? Logg inn her</span>
+              <span>Logg inn her</span>
             </div>
             <div class="alert alert-danger bad-login" ng-show="errors.badLogin">
               Feil brukernavn eller passord.
@@ -85,11 +64,14 @@
               </div>
             </form>
           </div>
-
+            <div class="header">
+              <span>Opprett ny bruker</span>
+            </div>
           <div class="social-area  col-xs-12 col-sm-4" ng-show="hasSocial">
             <div class="header">&nbsp;</div>
+            <a href="#register" class="btn btn-social button-na other">Registrer din personlige Nettavisen-ID</a>
             <button ng-repeat="p in providers" class="btn btn-social btn-{{p.providerId}}" ng-click="providerLogin(p.providerId)">
-              Logg inn med {{p.providerId}}</button>
+              Logg in med din {{p.providerId}}-profil</button>
           </div>
 
         </div>
